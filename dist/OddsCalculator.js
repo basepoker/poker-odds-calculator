@@ -24,17 +24,17 @@ class HandEquity {
             this.tieHandCount += 1;
         }
     }
-    getEquity() {
+    getEquity(displayDecimals) {
         if (this.possibleHandsCount === 0) {
             return 0;
         }
-        return _.round(_.divide(_.multiply(this.bestHandCount, 100), this.possibleHandsCount), 1);
+        return _.round(_.divide(_.multiply(this.bestHandCount, 100), this.possibleHandsCount), displayDecimals || 0);
     }
-    getTiePercentage() {
+    getTiePercentage(displayDecimals) {
         if (this.possibleHandsCount === 0) {
             return 0;
         }
-        return _.round(_.divide(_.multiply(this.tieHandCount, 100), this.possibleHandsCount), 1);
+        return _.round(_.divide(_.multiply(this.tieHandCount, 100), this.possibleHandsCount), displayDecimals || 0);
     }
     toString() {
         let s = `${this.getEquity()}%`;

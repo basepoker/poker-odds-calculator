@@ -6,8 +6,8 @@ export declare class HandEquity {
     protected tieHandCount: number;
     constructor();
     addPossibility(isBestHand: boolean, isTie: boolean): void;
-    getEquity(): number;
-    getTiePercentage(): number;
+    getEquity(displayDecimals?: number): number;
+    getTiePercentage(displayDecimals?: number): number;
     toString(): string;
 }
 export declare class OddsCalculator {

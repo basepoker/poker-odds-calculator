@@ -28,18 +28,18 @@ export class HandEquity {
     }
   }
 
-  public getEquity(): number {
+  public getEquity(displayDecimals?: number): number {
     if (this.possibleHandsCount === 0) {
       return 0;
     }
-    return _.round(_.divide(_.multiply(this.bestHandCount, 100), this.possibleHandsCount), 1);
+    return _.round(_.divide(_.multiply(this.bestHandCount, 100), this.possibleHandsCount), displayDecimals || 0);
   }
 
-  public getTiePercentage(): number {
+  public getTiePercentage(displayDecimals?: number): number {
     if (this.possibleHandsCount === 0) {
       return 0;
     }
-    return _.round(_.divide(_.multiply(this.tieHandCount, 100), this.possibleHandsCount), 1);
+    return _.round(_.divide(_.multiply(this.tieHandCount, 100), this.possibleHandsCount), displayDecimals || 0);
   }
 
   public toString(): string {
